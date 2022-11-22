@@ -25,4 +25,8 @@ class ExpensesAdapterAll(var mCtx: Context, var resources: Int, var items: List<
 
         return view
     }
+
+    override fun isEnabled(position: Int): Boolean {
+        return false
+    }
 }
