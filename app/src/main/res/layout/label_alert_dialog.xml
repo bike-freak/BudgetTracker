@@ -7,7 +7,7 @@
         android:id="@+id/labelAlertEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Clothes, Kids, Food"
+        android:hint="@string/label_hint"
         android:inputType="text"
         android:singleLine="true" />
 

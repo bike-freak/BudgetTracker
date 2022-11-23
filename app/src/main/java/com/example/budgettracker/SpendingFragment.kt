@@ -36,7 +36,7 @@ class SpendingFragment : Fragment() {
     var month: Int = 0
     var year: Int =0
     lateinit var yearMonth: YearMonth
-
+    var listYMs: List<String> = mutableListOf()
     var dateString: String = "DD-MM-YYYY"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +51,6 @@ class SpendingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_spending, container, false)
     }
 
@@ -69,6 +68,10 @@ class SpendingFragment : Fragment() {
         val databaseL = Room.databaseBuilder(view.context,
         LabelsDatabase::class.java,
         "LabelDB").build()
+        
+        val databaseA = Room.databaseBuilder(view.context,
+        AccountDatabase::class.java,
+        "AccountDB").build()
 
         backButton.visibility = View.INVISIBLE
 
@@ -86,7 +89,7 @@ class SpendingFragment : Fragment() {
             val expenseText = dialogLayout.findViewById<EditText>(R.id.expenseAmount)
             var labelSpinner = dialogLayout.findViewById<Spinner>(R.id.labelSpinner)
             builder.setTitle("Expense")
-            builder.setMessage("Enter al thee details")
+            builder.setMessage("Enter all the details")
             builder.setView(dialogLayout)
 
             val cal = Calendar.getInstance()
@@ -117,6 +120,7 @@ class SpendingFragment : Fragment() {
                     Toast.makeText(view.context,"Task is empty",Toast.LENGTH_LONG).show()
                 } else {
                     val label = labelSpinner.selectedView.findViewById<TextView>(R.id.labelItemText).text.toString()
+                    var limit: Long = 0
                     val expense = Expenses(null,expenseText.text.toString().toInt(),label,yearMonth.toString(),day,month+1,year)
                     GlobalScope.launch {
                         databaseE.ExpensesDAO().insertExpense(expense)
@@ -136,7 +140,6 @@ class SpendingFragment : Fragment() {
             var yearMonth = yearMont.text.toString()
             populateData(listView,databaseE,view,yearMonth)
             backButton.visibility = View.VISIBLE
-            Toast.makeText(view.context,"20202020",Toast.LENGTH_LONG).show()
         }
 
         backButton.setOnClickListener {

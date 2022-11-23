@@ -17,7 +17,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="5dp"
-            android:text="Add Expense"
+            android:text="@string/add_expense"
             app:layout_constraintBottom_toTopOf="@+id/expenseList"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,9 +28,9 @@
             android:layout_height="38dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:text="Expenses"
+            android:text="@string/expenses"
             android:textAlignment="viewStart"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/expenseList"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
             android:layout_width="98dp"
             android:layout_height="45dp"
             android:layout_marginTop="15dp"
-            android:text="Back"
+            android:text="@string/back"
             app:layout_constraintEnd_toStartOf="@+id/addExpense"
             app:layout_constraintStart_toEndOf="@+id/expensesHeading"
             app:layout_constraintTop_toTopOf="parent" />

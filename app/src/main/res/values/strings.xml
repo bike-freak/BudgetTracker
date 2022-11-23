@@ -2,4 +2,13 @@
     <string name="app_name">Budget Tracker</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label">Label</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="dd_mm_yyyy">DD-MM-YYYY</string>
+    <string name="label_hint">Clothes, Kids, Food</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="expenses">Expenses</string>
+    <string name="back">Back</string>
+    <string name="labels">Labels</string>
+    <string name="textview">TextView</string>
 </resources>

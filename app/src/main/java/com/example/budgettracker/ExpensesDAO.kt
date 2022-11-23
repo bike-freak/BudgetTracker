@@ -24,4 +24,8 @@ interface ExpensesDAO {
 
     @Query("SELECT * FROM table_expenses WHERE yearMonth LIKE :yearMonth ORDER BY date DESC, expense DESC")
     fun getExpenses(yearMonth: String) : LiveData<List<Expenses>>
+
+
+    @Query("SELECT SUM(expense) from table_expenses where yearMonth like :yearMonth")
+    suspend fun getSum(yearMonth: String) : Long
 }

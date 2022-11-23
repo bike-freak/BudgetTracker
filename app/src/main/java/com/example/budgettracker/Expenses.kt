@@ -11,5 +11,5 @@ data class Expenses(
     val yearMonth: String,
     val date: Int,
     val month: Int,
-    val year: Int
+    val year: Int,
 )
